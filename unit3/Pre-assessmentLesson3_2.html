@@ -162,12 +162,12 @@ function calculateScore() {
   if (percentage < 50) {
     showModal("عليك دراسة محتوى الدرس، لقد حصلت على " + percentage.toFixed(0) + "%", () => {
       localStorage.setItem("startLesson2", "true");
-      window.location.href = "/khlod/module3.html";// أو أي كلاس / صفحة   module1.html#lesson1_T1
+      window.location.href = "https://github.com/Educationalenvironment/Educational-environment_thkem_/module3.html";// أو أي كلاس / صفحة   module1.html#lesson1_T1
     });
   } else {
     showModal("ممتاز! لست بحاجة لدراسة الدرس، حصلت على " + percentage.toFixed(0) + "%", () => {
      localStorage.setItem("startLesson", "lesson3");
-    window.location.href = "/khlod/module3.html"; // أو أي كلاس / صفحة
+    window.location.href = "https://github.com/Educationalenvironment/Educational-environment_thkem_/module3.html"; // أو أي كلاس / صفحة
     });
   }
 }
