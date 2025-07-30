@@ -872,8 +872,8 @@
 }
 
 .img-lesson1_T4 {
-  width: 90%;
-  height: 90%;
+  width: 75%;
+  height: 70%;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -1226,16 +1226,16 @@ button.active {
     <div class="dropdown">
       <button class="dropdown-btn">دروس الموديول</button>
       <div class="dropdown-content">
-        <button onclick="loadLesson(1)">   الدرس الأول:   تسجيل الدخول في Mendeley </button>
-        <button onclick="loadLesson(2)"> 	الدرس الثانى:  إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley</button>
-        <button onclick="loadLesson(3)"> 	 	الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley </button>
+        <button onclick="loadLesson(1)"> 	الدرس الأول:   تسجيل الدخول الى  Google Form 	 </button>
+        <button onclick="loadLesson(2)">  	الدرس الثانى:  إضافة اسئلة للاختبار في Google Form </button>
+        <button onclick="loadLesson(3)"> 	الدرس الثالث:   ضبط إعدادات للاختبار فيGoogle Form  . </button>
       </div>
     </div>
   </div>
 
   <div class="content" id="content">
     <div class="intro1">
-           الموديول  الرابع "  إتقان مهارات الثقافة الرقمية باستخدام    Mendeley" 
+           الموديول  الثالث " التمكن من مهارات إنشاء اختبار الكتروني  باستخدام     Google Form  " 
     </div>
   </div>
 </div>
@@ -1246,7 +1246,8 @@ function showIntro() {
   document.getElementById("content").innerHTML = `
     <div class="intro2">
       <p>
-تكمن أهمية الحصول على المحتوى التعليمي الخاص بهذا الموديول في إتقانك  للمعارف والمهارات والقواعد والمعايير المتبعة في  استخدام أجهزة الكمبيوتر وتشغيلهاوالتعامل مع برامجه واستخدام شبكة الانترنت والخدمات الالكترونية باستخدام برنامج   Mendeley.      </p>
+         عزيزي المتدرب تتمثل أهمية هذا الموديول في  تكمن أهمية الحصول على المحتوى التعليمي الخاص بهذا الموديول في  معرفة وإتقان خطوات إنشاء اختبار الكتروني ومعرفة كيفية إنشاء الواجبات والتكليفات والتقييمات الذاتية واستطلاعات الرأى باستخدام  Google Form..
+      </p>
     </div>
   `;
 }
@@ -1260,10 +1261,10 @@ function showObjectives() {
       <div class="objectives-flex">
         <div class="objectives-text-new">
            <span class="highlight"> </span><br><br>
-          • تتمثل أهداف دراسة الموديول الرابع في:
+          • تتمثل أهداف دراسة الموديول الثالث في:
         </div>
         <div class="objectives-infographic">
-          <img src="Photo/unit4/AHDAF.png" alt="إنفوجرافيك الموديول">
+          <img src="Photo/unit3/AHDAF.png" alt="إنفوجرافيك الموديول">
         </div>
       </div>
     </div>
@@ -1278,7 +1279,8 @@ function lessonIntro1() {
   document.getElementById("content").innerHTML = `
     <div class="intro-box fade-in">
       <p>
-الدرس الأول : تسجيل الدخول إلى Mendeley  الذي يشتمل على كيفية تسجيل الدخول في Mendeley  والتعرف على أهم المكونات الرئيسة للواجهة.    </div>
+الدرس الاول : تسجيل الدخول الى  Google Form الذي يشتمل على معرفة  كيفية تسجيل الدخول في Google Form  ومعرفةوأهم المكونات الموجودة بالواجهة الرئيسية .      </p>
+    </div>
   `;
 }
  
@@ -1286,7 +1288,7 @@ function lessonObjectives1() {
   document.getElementById("content").innerHTML = `
     <div class="lessonObjectives1" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley       
+     الموديول الثالث-الدرس الأول:    تسجيل الدخول الى  Google Form     
   </div>
       <div class="objectives-new-container">
         <div class="objectives-content-row">
@@ -1294,7 +1296,7 @@ function lessonObjectives1() {
             بعد دراستك لهذا الدرس والتدرب على مفرداته والقيام بأنشطة التعلم المصاحبة، يجب أن تكون قادراً على أن:
           </div>
           <div class="objectives-img-side">
-            <img src="Photo/unit4/L1/HADF.png" alt="أهداف الدرس" />
+            <img src="Photo/unit3/L1/HADF.png" alt="أهداف الدرس" />
           </div>
         </div>
       </div>
@@ -1309,17 +1311,18 @@ function lesson1_T1() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
- الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   </div>
+     الموديول الثالث-الدرس الأول: تسجيل الدخول الى  Google Form        
+  </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-      لتسجيل الدخول الى  Mendeley يتبع الأتي    :
+      لتسجيل الدخول ألي Google Form يتبع الأتي :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/Op1L_lwtR94" 
+        src="https://www.youtube.com/embed/xr1vR2rF1Wk" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1337,23 +1340,28 @@ function lesson1_T1() {
 
 function lesson1_T2() {
   document.getElementById("content").innerHTML = `
-   <div class="lesson1_T2_22" style="position: relative;">
+    <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
- الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   </div>
-  <div class="lesson1_T2_22-text">
-    <l<div class="lesson1_T2_22">
-  <div class="lesson1_T2_22-text">
-    <ol> تتمثل مكونات واجهة العمل في Mendeley  في:
-      
-      <ol> -	شريط العنوان ،يوجد به اسم المنصة  وأزرر الاغلاق والتصغير   </ol>
-      <ol> -	شريط القوائم ،يوجد به ثلاث قوائم  كالتالي:- </ol>
-      <ol> 1-  قائمة Searh  يوجد بها مربع بحث ،للبحث عن المقالات واضافتها إلى المكتبة الخاصة بك  </ol>
-      <ol>2-   قائمة Library يوجد بها جميع المراجع والكتب والمصادر التلى تحتاج اليها </ol>
-      <ol>3- Settings ويوجد بها الملف التعريفي والخصوصية وتسجيل الخروج </ol>
-
-    </ol>
+     الموديول الثالث-الدرس الأول: تسجيل الدخول الى  Google Form        
   </div>
-  <img src="Photo/unit4/L1/a1.png" alt="صورة">
+  <h3 class="lesson1_T1-title"></h3>
+  <div class="lesson1_T1-row">
+    <div class="lesson1_T1-text">
+     لإنشاء اختبار جديد في google form  يتبع الآتي :
+    </div>
+    
+    <!-- تضمين فيديو اليوتيوب -->
+    <div class="lesson1_T1-video">
+      <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/D_HyXW9oprA" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
 </div>
 
 
@@ -1363,19 +1371,29 @@ function lesson1_T2() {
 
 function lesson1_T3() {
   document.getElementById("content").innerHTML = `
-    
-</div> <div class="intro-box-lesson1_T4" style="position: relative;">
-  <div style="position: absolute; top: -10px; right: -65px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   
+    <div class="lesson1_T2_22" style="position: relative;">
+  <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
+    الموديول الثالث-الدرس الأول: تسجيل الدخول الى  Google Form    
   </div>
-
-  <div class="title-lesson1_T5">
-   تتمثل مكونات شريط العنوان في Mendeley في :
+  <div class="lesson1_T2_22-text">
+    <l<div class="lesson1_T2_22">
+  <div class="lesson1_T2_22-text">
+    <ol>مكونات  واجهة العمل في   Google Form 
+      <li>   اسم الاختبار</li>
+      <li> تبويب الأسئلة  Question: لإنشاء اسئلة داخل الاختبار </li>
+      <li>  تبويب الردودResponses:لمعرفة التحليل الاحصائي للردود وكم عدد الردود المتاحة </li>
+      <li>  تبويب الاعداداتsettings: لضبط اعدادات الاختبار وكل ما يتعلق به </li>
+      <li>  اداة (المظهر)Theme: لتغيير مظهر الاختبار من حيث اللون والخلفية </li>
+      <li>  أداة المعاينة (Preview):لرؤية ومعاينة الاختبار قبل النشر</li>
+      <li> أداة العودة والرجوع (undo,Redo): للعودة او الرجوع عن آخر تعديل قمت به </li>
+      <li>  أداة نسخ رابط الاختبار(Copy link): لنسخ رابط الاختبار وارساله للطلبة </li>
+      <li>   أداة المشاركة (Share): لمشاركة الاختبار</li>
+      <li> أداة النشر (Publish): لنشر الاختبار على مواقع التواصل الاجتماعي </li>
+      <li>  مجموعة نقاط (More options): إذا اردت اعدادات اكثر للاختبار </li>
+      <li>  الملف التعريفي (الحساب الشخصي الخاص بك) </li>
+    </ol>
   </div>
-
-  <div class="img-box-lesson1_T4">
-    <img src="Photo/unit4/L1/a2.jpg" alt="متطلبات دمج التكنولوجيا" class="img-lesson1_T4">
-  </div>
+  <img src="Photo/unit3/L1/trkep.jfif" alt="صورة">
 </div>
   `;
 }
@@ -1383,43 +1401,20 @@ function lesson1_T3() {
 
 function lesson1_T4() {
   document.getElementById("content").innerHTML = `
-      
-</div> <div class="intro-box-lesson1_T4" style="position: relative;">
-  <div style="position: absolute; top: -10px; right: -65px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   
-  </div>
-
-  <div class="title-lesson1_T5">
-  يمكن تعريف شريط القوائم على انه يتكون من :
-  </div>
-
-  <div class="img-box-lesson1_T4">
-    <img src="Photo/unit4/L1/a3.jpg" alt="متطلبات دمج التكنولوجيا" class="img-lesson1_T4">
-  </div>
-</div>
-
-    
-  `;
-}
-
-
-function lesson1_T6() {
-    document.getElementById('activityBtn').dataset.enabled = 'true';
-document.getElementById('selfEvalBtn').dataset.enabled = 'true';
-  document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
- الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   </div>
+      الموديول الثالث-الدرس الأول: تسجيل الدخول الى  Google Form   
+  </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-       لضبط اعدادات قائمة    Mendeley   يتبع الأتي     :
+       لتسمية أو تغيير الاختبار في Google Form يتبع الآتي:
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/3PLuYiA4wZc" 
+        src="https://www.youtube.com/embed/mniV_1hwgZo" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1429,8 +1424,11 @@ document.getElementById('selfEvalBtn').dataset.enabled = 'true';
 
   </div>
 </div>
+
+    
   `;
 }
+
 
 function lesson1_T5() {
     document.getElementById('activityBtn').dataset.enabled = 'true';
@@ -1438,17 +1436,18 @@ document.getElementById('selfEvalBtn').dataset.enabled = 'true';
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
- الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   </div>
+      الموديول الثالث-الدرس الأول: تسجيل الدخول الى  Google Form    
+  </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-       	لاضافة ملف من جهاز الكمبيوتر كمرجع في Mendeley يتبع الأتي:       
+       لادراج صورة للاختبار في Google Form يتبع الآتي:       
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/D_KMVOrE7lw" 
+        src="https://www.youtube.com/embed/GXJhouYY9pk" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1461,18 +1460,21 @@ document.getElementById('selfEvalBtn').dataset.enabled = 'true';
   `;
 }
 
+
 function lesson1_T7() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T7" style="position: relative;">
   <div style="position: absolute; top: -75px; right: -195px; font-size: 8px; margin: 0; padding: 0;">
- الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   </div>
+     الموديول الثاني-الدرس الأول: تسجيل الدخول في منصة Teams  
+  </div>
     <center>
-   من خلال فهمك لمهارات دمج التكنولوجيا في التعليم وبالتحديد   مهارات الثقافة الرقمية باستخدام Mendeley  ، قم بحل النشاط التالي 
+من خلال فهمك لمهارات دمج التكنولوجيا في التعليم وبالتحديد   مهارات التقويم الالكتروني باستخدام منصة Google form ، قم بحل النشاط التالي
+
 </center>
 
  
   </ol>
-  <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/activities 4_1.html'">بدء</button>
+  <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/activities3_1.html'">بدء</button>
 </div>
 
   `;
@@ -1485,12 +1487,11 @@ function loadLessonTabs(lesson) {
 
   if(lesson === 1) {          
     sidebar.innerHTML = `<h5 style="margin-bottom: 1px; color: #4a00e0;">  عناصر الدرس:</h5>
-      <button onclick="setActiveButton(this); lesson1_T1()"> 	تسجيل الدخول في Mendeley</button>
-      <button onclick="setActiveButton(this); lesson1_T2()"> 	تحديد مكونات واجهة العمل في Mendeley </button>
-      <button onclick="setActiveButton(this); lesson1_T3()"> 	التعرف على مكونات شريط العنوان في Mendeley </button>
-      <button onclick="setActiveButton(this); lesson1_T4()"> 	التعرف على مفهوم شريط القوائم في Mendeley </button>
-      <button onclick="setActiveButton(this); lesson1_T6()"> ضبط اعدادات قائمة Libraryفي  Mendeley </button>
-      <button onclick="setActiveButton(this); lesson1_T5(); enableButtons()"> 	اضافة ملف من جهاز الكمبيوتر كمرجع في Mendeley </button>
+      <button onclick="setActiveButton(this); lesson1_T1()"> •	تسجيل الدخول في Google Form  </button>
+      <button onclick="setActiveButton(this); lesson1_T2()"> •	إنشاء اختبار جديد في  Google Form</button>
+      <button onclick="setActiveButton(this); lesson1_T3()">•	 تحديد مكونات واجهة العمل في  Google Form </button>
+      <button onclick="setActiveButton(this); lesson1_T4()">•	تغيير اسم الاختبار في Google Form </button>
+      <button onclick="setActiveButton(this); lesson1_T5(); enableButtons()"> •	ادراج صورة للاختبار في Google Form .</button>
        
       <button id="activityBtn" data-enabled="false" data-message-shown="false"
   onclick="
@@ -1513,7 +1514,7 @@ function loadLessonTabs(lesson) {
         this.dataset.messageShown = 'true';
       }
     } else {
-      window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/Self-evaluation4_1.html';
+      window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/Self-evaluation3_1.html';
     }
   ">التقويم الذاتي</button>
 
@@ -1521,17 +1522,18 @@ function loadLessonTabs(lesson) {
     content.innerHTML = `
   <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
- الموديول الرابع-الدرس الأول: تسجيل الدخول إلى Mendeley   </div>
+     الموديول الثالث-الدرس الأول: تسجيل الدخول الى  Google Form        
+  </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-      لتسجيل الدخول الى  Mendeley يتبع الأتي    :
+      لتسجيل الدخول ألي Google Form يتبع الأتي :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/Op1L_lwtR94" 
+        src="https://www.youtube.com/embed/xr1vR2rF1Wk" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1551,7 +1553,7 @@ function lessonObjectives2_1() {
   document.getElementById("content").innerHTML = `
     <div class="lessonObjectives2_2_2" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+    الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .    
   </div>
       <div class="lessonObjectives2_2_2-new-container">
         <div class="lessonObjectives2_2_2-content-row">
@@ -1561,7 +1563,7 @@ function lessonObjectives2_1() {
 
             </div>
           <div class="lessonObjectives2_2_2-img-side">
-            <img src="Photo/unit4/L2/hadf.png" alt="أهداف الدرس" />
+            <img src="Photo/unit3/L2/hadf.png" alt="أهداف الدرس" />
           </div>
         </div>
       </div>
@@ -1575,18 +1577,18 @@ function lesson2_T1() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+  الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .     
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-       لأضافة مجلد في   Mendeley    يتبع الأتي:   :
+       لإضافة أسئلة للاختبار في Google Form يتبع الآتي :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/1MI722fJO6s" 
+        src="https://www.youtube.com/embed/YKCzJd5eiIE" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1603,18 +1605,18 @@ function lesson2_T2() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+     الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .     
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-    لاضافة مرجع بشكل يدوي في Mendeley يتبع الأتي:   
+        لإضافة سؤال اختر من متعدد فيGoogle Form يتبع الآتي :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/TMxmAwVF0mI" 
+        src="https://www.youtube.com/embed/ptMuXrbJ0mY" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1631,18 +1633,18 @@ function lesson2_T3() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+     الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .     
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-    لا نشاء مكتبة بداخلها كتب ومراجع في Mendeley  يتبع الأتي:   
+     لترتيب الاختيارات بشكل عشوائي في Google Form يتبع الآتي :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/L4sOOEtIuV4" 
+        src="https://www.youtube.com/embed/7zzXwX1TZFI" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1659,18 +1661,18 @@ function lesson2_T4() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+     الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .   
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-    لانشاء مجموعات في     Mendeley  يتبع الأتي: 
+    لتغيير مظهر الاختبار. في Google Form يتبع الآتي:
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/mb94cOzr9Rk" 
+        src="https://www.youtube.com/embed/3mS1OT7HNJE" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1683,6 +1685,61 @@ function lesson2_T4() {
   `;
 }
 //-------
+function lesson2_T5() {
+  document.getElementById("content").innerHTML = `
+    <div class="lesson1_T1-section" style="position: relative;">
+  <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
+     الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .     
+  </div>
+  <h3 class="lesson1_T1-title"></h3>
+  <div class="lesson1_T1-row">
+    <div class="lesson1_T1-text">
+            لنسخ سؤال داخل الاختبار فيGoogle Form يتبع الآتي:
+    </div>
+    
+    <!-- تضمين فيديو اليوتيوب -->
+    <div class="lesson1_T1-video">
+      <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/mUUKzzJoMjg" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</div>
+  `;
+}
+//-------
+function lesson2_T7() {
+  document.getElementById("content").innerHTML = `
+    <div class="lesson1_T1-section" style="position: relative;">
+  <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
+     الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .     
+  </div>
+  <h3 class="lesson1_T1-title"></h3>
+  <div class="lesson1_T1-row">
+    <div class="lesson1_T1-text">
+    لحذف سؤال داخل الاختبار  في Google Form يتبع الآتي :
+    </div>
+    
+    <!-- تضمين فيديو اليوتيوب -->
+    <div class="lesson1_T1-video">
+      <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/4mMKyTTeFzY" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</div>
+  `;
+}
 //-------
 function lesson2_T6() {
   // تفعيل الأزرار
@@ -1693,18 +1750,18 @@ function lesson2_T6() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+    الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .     
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-    لتنظيم الملفات داخل مجموعات في Mendeley  يتبع الأتي:  
+     لإضافة قسم داخل الاختبار  في Google Form  يتبع الآتي   :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/aRoEyEbb4hI" 
+        src="https://www.youtube.com/embed/3TFwYj4a9oQ" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1722,16 +1779,16 @@ function lesson2_T8() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T7" style="position: relative;">
   <div style="position: absolute; top: -75px; right: -195px; font-size: 8px; margin: 0; padding: 0;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+   الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .      
   </div>
 
     <center>
-   من خلال فهمك لمهارات دمج التكنولوجيا في التعليم وبالتحديد   مهارات الثقافة الرقمية باستخدام Mendeley  ، قم بحل النشاط التالي 
+من خلال فهمك لمهارات دمج التكنولوجيا في التعليم وبالتحديد   مهارات التقويم الالكتروني باستخدام منصة Google form ، قم بحل النشاط التالي
 </center>
 
  
   </ol>
-  <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/activities 4_2.html'">بدء</button>
+  <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/activities 3_2.html'">بدء</button>
 </div>
   `;
 }
@@ -1743,11 +1800,13 @@ function loadLessonTabs2() {
  
   sidebar.innerHTML = `                 
     <h5 style="margin-bottom: 1px; color: #4a00e0;">عناصر الدرس الثاني:</h5>
-    <button onclick="setActiveButton(this); lesson2_T1()"> 	اضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley   </button>
-    <button onclick="setActiveButton(this); lesson2_T2()"> اضافة مرجع يدويا في Mendeley  </button>
-    <button onclick="setActiveButton(this); lesson2_T3()"> انشاء مكتبة بداخلها كتب ومراجع في Mendeley  </button>
-    <button onclick="setActiveButton(this); lesson2_T4()"> انشاء مجموعات خاصة في منصة   Mendeley </button>
-    <button onclick="setActiveButton(this); lesson2_T6()"> تنظيم الملفات داخل مجموعة في Mendeley </button>
+    <button onclick="setActiveButton(this); lesson2_T1()">	 •	إضافة اسئلة للاختبار في Google Form   </button>
+    <button onclick="setActiveButton(this); lesson2_T2()">•	إضافة سؤال( اختيار من متعدد ) في Google Form 	   </button>
+    <button onclick="setActiveButton(this); lesson2_T3()"> •	ترتيب الاختيارات بشكل عشوائي في Google Form  </button>
+    <button onclick="setActiveButton(this); lesson2_T4()"> 	•	إنشاء مظهر جديد للاختبار في Google Form  </button>
+    <button onclick="setActiveButton(this); lesson2_T5()">   •	نسخ سؤال داخل الاختبار  في Google Form </button>
+    <button onclick="setActiveButton(this); lesson2_T7()"> •	إضافة قسم الى الاختبار في Google Form   </button>
+    <button onclick="setActiveButton(this); lesson2_T6()"> •	حذف سؤال في Google Form   </button>
     <button id="activityBtn" data-enabled="false" data-message-shown="false"
   onclick="
     if (this.dataset.enabled === 'false') {
@@ -1769,7 +1828,7 @@ function loadLessonTabs2() {
         this.dataset.messageShown = 'true';
       }
     } else {
-      window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/Self-evaluation4_2.html';
+      window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/Self-evaluation3_2.html';
     }
   ">التقويم الذاتي</button>
   `;
@@ -1777,18 +1836,18 @@ function loadLessonTabs2() {
   content.innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-  الموديول الرابع-الدرس الثاني: إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley      
+  الموديول الثالث-الدرس الثاني:   إضافة اسئلة للنموذج في Google Form .     
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-       لأضافة مجلد في   Mendeley    يتبع الأتي:   :
+       لإضافة أسئلة للاختبار في Google Form يتبع الآتي :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/1MI722fJO6s" 
+        src="https://www.youtube.com/embed/YKCzJd5eiIE" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1809,12 +1868,11 @@ function loadLessonTabs3() {
 
   sidebar.innerHTML = `
     <h5 style="margin-bottom: 1px; color: #4a00e0;">عناصر الدرس الثالث:</h5>
-    <button onclick="setActiveButton(this); lesson3_T1()"> 	البحث في الوثائق في   Mendeley </button>
-    <button onclick="setActiveButton(this); lesson3_T2()"> 	ضبط خصائص المرجع أو المصدر في  Mendeley </button>
-    <button onclick="setActiveButton(this); lesson3_T3()"> 	دعوة باحثين في مجموعات للتعاون فيما بينهم في  Mendeley </button>
-    <button onclick="setActiveButton(this); lesson3_T4()">	تغيير نمط اقتباس مرجع معين في Mendeley   </button>
-    <button onclick="setActiveButton(this); lesson3_T5()">  حذف مرجع فيMendeley </button>
-    <button onclick="setActiveButton(this); lesson3_T6()"> 	حذف مجموعة فيMendeley</button>
+    <button onclick="setActiveButton(this); lesson3_T1()">  •	ضبط إعدادات الاختبار فيGoogle Form</button>
+    <button onclick="setActiveButton(this); lesson3_T2()"> •	مشاهدة الردود على الاختبار في Google Form</button>
+    <button onclick="setActiveButton(this); lesson3_T3()"> •	نسخ رابط الاختبار في Google Form لارساله للطلبة </button>
+    <button onclick="setActiveButton(this); lesson3_T4()"> •	معاينة الاختبار في Google Form	 </button>
+    <button onclick="setActiveButton(this); lesson3_T6()">  •	نشر الاختبار في Google Form</button>
     <button id="activityBtn" data-enabled="false" data-message-shown="false"
   onclick="
     if (this.dataset.enabled === 'false') {
@@ -1836,7 +1894,7 @@ function loadLessonTabs3() {
         this.dataset.messageShown = 'true';
       }
     } else {
-      window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/Self-evaluation4_3.html';
+      window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/Self-evaluation3_3.html';
     }
   ">التقويم الذاتي</button>
   `;
@@ -1844,18 +1902,18 @@ function loadLessonTabs3() {
   content.innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+     لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form       
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-    للبحث في الوثائق في منصة   Mendeley  يتبع الأتي:
+      لضبط أعدادات الأختبار في Google Form يتبع التالي    :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/1ingAaTRWt4" 
+        src="https://www.youtube.com/embed/tpxIgEkaJBI" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1872,8 +1930,7 @@ function lessonObjectives3_1() {
   document.getElementById("content").innerHTML = `
     <div class="lessonObjectives2_2_2" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
-
+     لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form  
        </div>
       <div class="lessonObjectives2_2_2-new-container">
         <div class="lessonObjectives2_2_2-content-row">
@@ -1882,7 +1939,7 @@ function lessonObjectives3_1() {
 بعد دراستك لهذا الدرس والتدرب على مفرداته والقيام بأنشطة التعلم المصاحبة، يجب أن تكون قادراً على أن:
             </div>
           <div class="lessonObjectives2_2_2-img-side">
-            <img src="Photo/unit4/L3/hadf.png" alt="أهداف الدرس" />
+            <img src="Photo/unit3/L3/hadf.png" alt="أهداف الدرس" />
           </div>
         </div>
       </div>
@@ -1890,22 +1947,24 @@ function lessonObjectives3_1() {
   `;
 }
 
+
+
 function lesson3_T1() {
   document.getElementById("content").innerHTML = `
-     <div class="lesson1_T1-section" style="position: relative;">
+    <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+     لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form       
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-    للبحث في الوثائق في منصة   Mendeley  يتبع الأتي:
+     لضبط أعدادات الأختبار في Google Form يتبع التالي    :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/1ingAaTRWt4" 
+        src="https://www.youtube.com/embed/tpxIgEkaJBI" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1922,18 +1981,18 @@ function lesson3_T2() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع -الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+          لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form      
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
- لضبط خصائص المرجع أو المصدر في  Mendeley  يتبع الأتي :
+لمشاهدة الردود على الاختبار في Google Formيتبع الآتي   :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/zoJ4tHxPJ-w" 
+        src="https://www.youtube.com/embed/80sOPr9sjoE" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1950,18 +2009,18 @@ function lesson3_T3() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+          لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form      
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-لدعوة باحثين في مجموعات للتعاون فيما بينهم في  Mendeley   يتبع الأتي:      
+لنسخ رابط الاختبار  في Google Form يتبع الآتي  :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/lNtUztdbeKI" 
+        src="https://www.youtube.com/embed/YUcJlqDtpc8" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1978,18 +2037,18 @@ function lesson3_T4() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+        لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form       
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-لتغيير نمط اقتباس مرجع معين في Mendeley  يتبع الأتي:        
+لمعاينة الاختبار  في Google Form يتبع الآتي:
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/cn2ijayCceU" 
+        src="https://www.youtube.com/embed/Vk-VYfmq5aw" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -2006,18 +2065,18 @@ function lesson3_T5() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section"style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+          لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form       
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-     لحذف مرجع في Mendeley يتبع الأتي:          
+      لنشرالاختبار  في Google Form يتبع الآتي:
     </div>
 
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/3UIBZH4mLrQ"
+        src="https://www.youtube.com/embed/XOsOtaRrfXY"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -2032,24 +2091,26 @@ function lesson3_T5() {
 
 //-------
 function lesson3_T6() {
-    document.getElementById('activityBtn').dataset.enabled = 'true';
+  // تفعيل الأزرار
+  document.getElementById('activityBtn').dataset.enabled = 'true';
 document.getElementById('selfEvalBtn').dataset.enabled = 'true';
+
   // المحتوى المعروض
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T1-section" style="position: relative;">
   <div style="position: absolute; top: 0px; right: 4px; font-size: 8px; margin: 0; padding: 0; z-index: 10;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+         لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form       
   </div>
   <h3 class="lesson1_T1-title"></h3>
   <div class="lesson1_T1-row">
     <div class="lesson1_T1-text">
-لحذف مجموعة فيMendeley   يتبع الأتي:              
+حذف الفصل الافتراضي عبر منصة Teams   :
     </div>
     
     <!-- تضمين فيديو اليوتيوب -->
     <div class="lesson1_T1-video">
       <iframe width="100%" height="315" 
-        src="https://www.youtube.com/embed/ok6T3kkYeTU" 
+        src="https://www.youtube.com/embed/huKd2hlfBYI" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -2062,23 +2123,23 @@ document.getElementById('selfEvalBtn').dataset.enabled = 'true';
   `;
 }
 
-//--------------------------
+
 
 
 function lesson3_T7() {
   document.getElementById("content").innerHTML = `
     <div class="lesson1_T7" style="position: relative;">
   <div style="position: absolute; top: -75px; right: -195px; font-size: 8px; margin: 0; padding: 0;">
-     لموديول الرابع-الدرس الثالث:   تنمية البحث في الوثائق في   Mendeley    
+          لموديول الثالث-الدرس الثالث:    ضبط إعدادات النموذج فيGoogle Form       
   </div>
 
     <center>
-   من خلال فهمك لمهارات دمج التكنولوجيا في التعليم وبالتحديد   مهارات الثقافة الرقمية باستخدام Mendeley  ، قم بحل النشاط التالي 
+من خلال فهمك لمهارات دمج التكنولوجيا في التعليم وبالتحديد   مهارات التقويم الالكتروني باستخدام منصة Google form ، قم بحل النشاط التالي
 </center>
 
  
   </ol>
-  <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/activities 4_3.html'">بدء</button>
+  <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/activities 3_3.html'">بدء</button>
 </div>
   `;
 }
@@ -2098,7 +2159,7 @@ function loadLesson(lesson) {
   sidebar.innerHTML = `
     <!-- <button onclick="setActiveButton(this); lessonIntro1()">مقدمة الدرس</button> -->
     <button onclick="setActiveButton(this); lessonObjectives1()">أهداف الدرس</button>
-    <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/Pre-assessmentLesson4_1.html'">التقويم القبلي</button>
+    <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/Pre-assessmentLesson3_1.html'">التقويم القبلي</button>
     <button onclick="alert('عليك أجتياز التقويم القبلي أولا')"> عناصر الدرس </button>
 <button onclick="alert('عليك دراسة عناصر الدرس أولاً')">النشاط</button>
 <button onclick="alert('عليك دراسة عناصر الدرس أولاً')">التقويم الذاتي</button>
@@ -2107,7 +2168,7 @@ function loadLesson(lesson) {
   content.innerHTML = `
   <div class="intro1">
     <p>
-الدرس الأول : تسجيل الدخول إلى Mendeley  الذي يشتمل على كيفية تسجيل الدخول في Mendeley  والتعرف على أهم المكونات الرئيسة للواجهة.    </div>
+الدرس الاول : تسجيل الدخول الى  Google Form الذي يشتمل على معرفة  كيفية تسجيل الدخول في Google Form  ومعرفةوأهم المكونات الموجودة بالواجهة الرئيسية .    </p>
   </div>
 `;
 
@@ -2118,7 +2179,7 @@ function loadLesson(lesson) {
     sidebar.innerHTML = `
       <!-- <button onclick="setActiveButton(this); lessonIntro2_1()">مقدمة الدرس</button> -->
     <button onclick="setActiveButton(this); lessonObjectives2_1()">أهداف الدرس</button>
-    <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/Pre-assessmentLesson4_2.html'">التقويم القبلي</button>
+    <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/Pre-assessmentLesson3_2.html'">التقويم القبلي</button>
     <button onclick="alert('عليك أجتياز التقويم القبلي أولا')"> عناصر الدرس </button>
 <button onclick="alert('عليك دراسة عناصر الدرس أولاً')">النشاط</button>
 <button onclick="alert('عليك دراسة عناصر الدرس أولاً')">التقويم الذاتي</button>
@@ -2126,7 +2187,8 @@ function loadLesson(lesson) {
   content.innerHTML = `
   <div class="intro1">
     <p>
-الدرس الثاني:إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeleyالذي يشتمل على  كيفية إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley انشاء مكتبة بداخلها مجموعة من المراجع.  </div>
+الدرس الثاني : إضافة اسئلة للنموذج في Google Form الذي يشتمل على معرفة  كيفية إضافة أسئلة للاختبار في Google Form  ومعرفةأهم الاعدادات الخاصة به.</p>
+  </div>
 `;
   }
   
@@ -2134,7 +2196,7 @@ function loadLesson(lesson) {
     sidebar.innerHTML = `
       <!-- <button onclick="setActiveButton(this); lessonIntro3_1()">مقدمة الدرس</button> -->
     <button onclick="setActiveButton(this); lessonObjectives3_1()">أهداف الدرس</button>
-    <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit4/Pre-assessmentLesson4_3.html'">التقويم القبلي</button>
+    <button onclick="window.location.href='https://educationalenvironment.github.io/Educational-environment_thkem_/unit3/Pre-assessmentLesson3_3.html'">التقويم القبلي</button>
     <button onclick="alert('عليك أجتياز التقويم القبلي أولا')"> عناصر الدرس </button>
 <button onclick="alert('عليك دراسة عناصر الدرس أولاً')">النشاط</button>
 <button onclick="alert('عليك دراسة عناصر الدرس أولاً')">التقويم الذاتي</button>
@@ -2142,7 +2204,8 @@ function loadLesson(lesson) {
   content.innerHTML = `
   <div class="intro1">
      <p>
-الدرس الثالث:تنمية البحث في الوثائق في    Mendeleyالذي يشتمل على كيفية البحث في الوثائق بداخل  Mendeley  الفرق بين حذف المرجع والمجموعة.      </div>
+الدرس الثالث : ضبط إعدادات النموذج فيGoogle Form الذي يشتمل على كيفية ضبط إعدادات الاختبار في Google Form  وتنزيل الردود وعمل نشر للاختبار .   </p>
+      </div>
 `;
   }
 }
