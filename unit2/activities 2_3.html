@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحة الأنشطة التفاعلية</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        /* ✅ التنسيق العام */
+/* ✅ الأساسيات العامة */
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9fb;
+  color: #333;
+}
+
+/* ✅ الحاوية الأساسية للنموذج */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ✅ العناوين */
+h2 {
+  text-align: center;
+  color: #4a00e0;
+}
+
+/* ✅ حقول الإدخال */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ✅ الأزرار */
+button {
+  padding: 12px 20px;
+  background: #4a00e0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+button:hover {
+  background: #3800b0;
+}
+
+/* ✅ الشريط العلوي */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ✅ أيقونات التقدم */
+.progress-icons span {
+  font-size: 22px;
+  margin-left: 8px;
+  opacity: 0.3;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.progress-icons .active {
+  opacity: 1;
+  color: green;
+}
+
+.progress-icons .gold {
+  color: goldenrod;
+}
+
+.progress-icons .trophy {
+  color: #d39e00;
+}
+
+.progress-icons img#badge-image {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+
+/* ✅ منطقة النشاط */
+#activity-area {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ✅ الحاوية العامة لليسار واليمين */
+#activity-area > div {
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ✅ الجهة اليمنى: الجمل + dropzones داخل مستطيل أزرق */
+ul.task-list {
+  background: #e1f5fe;
+  padding: 25px;
+  border-radius: 20px;
+  list-style: none;
+  margin: 0;
+  flex: 1;
+  min-width: 300px;
+}
+
+ul.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ✅ الحقول القابلة للإفلات */
+.dropzone {
+  width: 160px;
+  height: 40px;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  background: #fff;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropzone.dragover {
+  background-color: #e0f7fa;
+  border-color: #00796b;
+}
+
+/* ✅ البطاقات القابلة للسحب */
+.draggable {
+  background: #fff;
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-weight: bold;
+  cursor: grab;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 200px;
+}
+
+.draggable:active {
+  cursor: grabbing;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ✅ الحاوية اليسرى للبطاقات */
+.activity-cards {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ✅ تنسيق البطاقة بعد الإفلات */
+.dropzone .draggable {
+  background-color: #e8f5e9;
+  border: 2px solid #4caf50;
+  box-shadow: 0 2px 8px rgba(0, 128, 0, 0.2);
+}
+
+/* ✅ النافذة المنبثقة */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+  color: #4a00e0;
+  font-size: 22px;
+}
+
+.modal-content button {
+  background-color: #4a00e0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background-color: #3800b0;
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- ✅ الشريط العلوي -->
+<div class="top-bar" id="top-bar" style="display: none;">
+  <div id="user-name">👤 </div>
+  <div>النتيجة: <span id="score">0</span></div>
+  <div class="progress-icons">
+    <img id="check" src="✔️" style="display: none;" />
+    <img id="gold" src="✔️" style="display: none;" />
+    <img id="trophy" src="🏆" style="display: none;" />
+    <img id="badge-image" style="display: none;" />
+  </div>
+</div>
+
+<!-- ✅ النموذج -->
+<div class="container" id="form-container">
+  <h2>تسجيل الدخول</h2>
+  <input type="text" id="name" placeholder="الاسم" required />
+  <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+  <button onclick="submitForm()">دخول</button>
+</div>
+
+<!-- ✅ النافذة المنبثقة -->
+<div class="modal" id="readyModal" style="display: none;">
+  <div class="modal-content">
+    <h3>هل أنت جاهز لبدء النشاط؟</h3>
+    <button onclick="startActivity()">نعم، لنبدأ</button>
+  </div>
+</div>
+
+
+
+<!-- ✅ مساحة النشاط -->
+<div id="activity-area" style="padding: 20px;"></div>
+
+<!-- ✅ زر تسليم -->
+<div style="text-align:center;">
+  <button id="submit-button" onclick="submitAnswers()" style="display: none;">تسليم</button>
+</div>
+
+<script>
+const supabaseUrl = 'https://duxdtpkxomkjoxnlzjgw.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1eGR0cGt4b21ram94bmx6amd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE5MTYyMzIsImV4cCI6MjA2NzQ5MjIzMn0._MOyOhSQvvKrmEwAJGvibp79JXM9MlTJyEVnpvuTJL0'; // قصرت المفتاح هنا
+const { createClient } = supabase;
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
+const badges = {
+  6: { url: "https://duxdtpkxomkjoxnlzjgw.supabase.co/storage/v1/object/public/photo/cup/cup.png",
+    field: "check_mark"},
+
+  4: { url: "https://duxdtpkxomkjoxnlzjgw.supabase.co/storage/v1/object/public/photo/Rightgolden/Rightgolden.png",
+    field: "gold_check" },
+
+  2: { url: "https://duxdtpkxomkjoxnlzjgw.supabase.co/storage/v1/object/public/photo/correct/correct.png",
+    field: "trophy" }
+};
+
+let currentUser = {};
+let score = 0;
+let countdown;
+
+// ✅ دالة التسجيل
+function submitForm() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const lesson = "نشاط الدرس الثالث -- الوحدة الثانية";
+
+  if (!name || !email || !/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
+    return alert("خطأ لا يوجد بريد بهذا العنوان ");
+  }
+
+  // ✅ فقط نحفظ البيانات في المتغير الحالي ولا نرسل شيء لقاعدة البيانات
+  currentUser = { name, email, lesson };
+  document.getElementById("form-container").style.display = "none";
+  document.getElementById("readyModal").style.display = "flex";
+}
+
+// ✅ بدء النشاط
+function startActivity() {
+  document.getElementById("readyModal").style.display = "none";
+  document.getElementById("submit-button").style.display = "inline-block";
+  document.getElementById("top-bar").style.display = "flex";
+  document.getElementById("user-name").innerText = `👤 ${currentUser.name}`;
+  document.getElementById("score").innerText = score;
+
+  document.getElementById("activity-area").innerHTML = `
+   
+   <h3 style="text-align:center; margin-top: 0px;">قم بسحب كل بطاقة إلى الجملة المناسبة لها 👇</h3>
+
+<!-- ✅ القسم العلوي - 3 مربعات نصية -->
+<div style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 30px;">
+  <div style="width: 32%; border: 1px solid #000; font-size: 10px; padding: 6px; text-align: justify; background: #fff; box-sizing: border-box;">
+في إطار تفعيل دور المعلم كمشرف على البيئة الرقمية، تظهر أهمية التحكم في خصائص الفصل الافتراضي وتحديد صلاحيات الأعضاء وتنظيم التفاعلات. ومن خلال واجهة المنصة، يُمكن للمعلم الوصول إلى خيارات تتيح له ضبط إعدادات المجموعة التعليمية  </div>
+  <div style="width: 32%; border: 1px solid #000; font-size: 10px; padding: 6px; text-align: justify; background: #fff; box-sizing: border-box;">
+قد تقتضي الحاجة إلى إنهاء الارتباط بأحد الفصول الافتراضية داخل المنصة التعليمية، سواء بسبب تغيير في المهام أو انتقال إلى بيئة تعليمية أخرى يُمكن من خلاله اتخاذ القرار بإنهاء التواجد داخل هذا الإطار الرقمي الإجراء بشكل نهائي  </div>
+  <div style="width: 32%; border: 1px solid #000; font-size: 10px; padding: 6px; text-align: justify; background: #fff; box-sizing: border-box;">
+عند رغبة المعلم في توسيع نطاق التفاعل داخل الفصل الرقمي، يلجأ إلى خيارات مخصصة ضمن المنصة تُمكّنه من ضم مشاركين جدد. ويتم ذلك عبر تحديد البيئة الصفية المطلوبة، ثم استخدام آلية تعتمد على إدخال بيانات تعريفية دقيقة كالبريد الإلكتروني أو الاسم، ليُتاح للمنضمين الجدد التفاعل الكامل مع محتوى الفصل وإجراءاته التعليمية  </div>
+</div>
+
+<!-- ✅ القسمان الرئيسيان -->
+<div style="display: flex; justify-content: space-between; margin-top: 15px; gap: 40px; flex-wrap: wrap;">
+
+  <!-- ✅ الجهة اليمنى (الجمل مع dropzones) -->
+  <div style="flex: 1; min-width: 300px; background: #e1f5fe; padding: 20px; border-radius: 20px;">
+    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px; font-size: 10px;">
+      <li style="display: flex; justify-content: space-between; align-items: center;">
+        <span>يختار الفصل ()</span>
+        <div class="dropzone" data-accept="مغادرة الفصل الافتراضي" style="width: 180px; height: 40px; border: 2px dashed #aaa; border-radius: 8px; background: #fff;"></div>
+      </li>
+      <li style="display: flex; justify-content: space-between; align-items: center;">
+        <span>يختار أمر Add Members ()</span>
+        <div class="dropzone" data-accept="إضافة أعضاء" style="width: 180px; height: 40px; border: 2px dashed #aaa; border-radius: 8px; background: #fff;"></div>
+      </li>
+      <li style="display: flex; justify-content: space-between; align-items: center;">
+        <span>يضغط على أيقونة Teams ()</span>
+        <div class="dropzone" data-accept="إضافة أعضاء" style="width: 180px; height: 40px; border: 2px dashed #aaa; border-radius: 8px; background: #fff;"></div>
+      </li>
+      <li style="display: flex; justify-content: space-between; align-items: center;">
+        <span>يضغط على Team Leave ()</span>
+        <div class="dropzone" data-accept="مغادرة الفصل الافتراضي" style="width: 180px; height: 40px; border: 2px dashed #aaa; border-radius: 8px; background: #fff;"></div>
+      </li>
+      <li style="display: flex; justify-content: space-between; align-items: center;">
+        <span>يضغط على أمر Manage Team ()</span>
+        <div class="dropzone" data-accept="إدارة الفصل الافتراضي" style="width: 180px; height: 40px; border: 2px dashed #aaa; border-radius: 8px; background: #fff;"></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ✅ الجهة اليسرى (البطاقات القابلة للسحب) -->
+  <div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 15px; align-items: center; font-size: 10px;">
+    <div class="draggable" draggable="true" data-id="item-1" data-category="مغادرة الفصل الافتراضي" style="background:#ffebee; padding:10px 20px; border-radius:10px; cursor:grab;">مغادرة الفصل الافتراضي</div>
+    <div class="draggable" draggable="true" data-id="item-2" data-category="إدارة الفصل الافتراضي" style="background:#e8f5e9; padding:10px 20px; border-radius:10px; cursor:grab;">إدارة الفصل الافتراضي</div>
+    <div class="draggable" draggable="true" data-id="item-3" data-category="إضافة أعضاء" style="background:#e3f2fd; padding:10px 20px; border-radius:10px; cursor:grab;">إضافة أعضاء</div>
+    <div class="draggable" draggable="true" data-id="item-4" data-category="مغادرة الفصل الافتراضي" style="background:#fff3e0; padding:10px 20px; border-radius:10px; cursor:grab;">مغادرة الفصل الافتراضي</div>
+    <div class="draggable" draggable="true" data-id="item-5" data-category="إضافة أعضاء" style="background:#ede7f6; padding:10px 20px; border-radius:10px; cursor:grab;">إضافة أعضاء</div>
+  </div>
+
+</div>
+
+
+  `;
+
+  startDragAndDrop();
+  startTimer();
+}
+
+
+// ✅ السحب والإفلات
+function startDragAndDrop() {
+  const draggables = document.querySelectorAll('.draggable');
+  const dropzones = document.querySelectorAll('.dropzone');
+
+  draggables.forEach((el, index) => {
+    el.setAttribute("data-id", `item-${index}`); // لإعطاء كل بطاقة ID فريد
+
+    el.addEventListener('dragstart', e => {
+      if (isTimeOver) return e.preventDefault(); // منع السحب بعد انتهاء الوقت
+
+      e.dataTransfer.setData("text", el.getAttribute("data-category"));
+      e.dataTransfer.setData("text/html", el.outerHTML);
+      e.dataTransfer.setData("id", el.dataset.id);
+      setTimeout(() => el.style.display = "none", 0);
+    });
+
+    el.addEventListener('dragend', e => {
+      el.style.display = "block";
+    });
+  });
+
+  dropzones.forEach(zone => {
+    zone.addEventListener('dragover', e => {
+      if (isTimeOver) return;
+      e.preventDefault();
+      zone.classList.add("dragover");
+    });
+
+    zone.addEventListener('dragleave', () => {
+      zone.classList.remove("dragover");
+    });
+
+    zone.addEventListener('drop', e => {
+      if (isTimeOver) return;
+
+      e.preventDefault();
+      zone.classList.remove("dragover");
+
+      const html = e.dataTransfer.getData("text/html");
+      const draggedId = e.dataTransfer.getData("id");
+
+      const div = document.createElement("div");
+      div.innerHTML = html;
+      div.firstChild.style.display = "block";
+
+      // فقط احذف العنصر الذي تم سحبه فعليًا (وليس كل المتشابهين)
+      const dragged = document.querySelector(`[data-id='${draggedId}']`);
+      if (dragged) dragged.remove();
+
+      // إضافته إلى منطقة الإسقاط
+      zone.appendChild(div.firstChild);
+    });
+  });
+}
+
+
+// ✅ المؤقت
+let isTimeOver = false;
+
+function startTimer() {
+  let timeLeft = 30;
+  const timerEl = document.getElementById("timer");
+  const circleEl = document.getElementById("timer-circle");
+
+  timerEl.innerText = timeLeft;
+
+  countdown = setInterval(() => {
+    timeLeft--;
+    timerEl.innerText = timeLeft;
+
+    let hue = (timeLeft / 30) * 120;
+    circleEl.style.backgroundColor = `hsl(${hue}, 80%, 50%)`;
+
+    if (timeLeft === 0) {
+      clearInterval(countdown);
+      isTimeOver = true; // ❗️نمنع التفاعل بعد ذلك
+      circleEl.style.backgroundColor = "hsl(0, 80%, 50%)";
+    }
+  }, 1000);
+}
+
+
+// ✅ التقييم عند تسليم
+function submitAnswers() {
+  clearInterval(countdown);
+  let correct = 0;
+
+  // لكل dropzone تحقق من كل عنصر تم إسقاطه داخله
+  document.querySelectorAll('.dropzone').forEach(zone => {
+    const expectedCategory = zone.getAttribute("data-accept");
+
+    zone.querySelectorAll('.draggable').forEach(item => {
+      const actualCategory = item.getAttribute("data-category");
+      if (actualCategory === expectedCategory) {
+        correct++;
+        item.style.backgroundColor = "#c8e6c9"; // أخضر للتأكيد
+      } else {
+        item.style.backgroundColor = "#ffcdd2"; // أحمر للتأكيد
+      }
+    });
+  });
+
+  // تحديث السكور
+  score = correct;
+  document.getElementById("score").innerText = score;
+
+  // تحديد الشارة المناسبة
+  let badge = null;
+  if (score === 5) badge = badges[6];
+  else if (score >= 3) badge = badges[4];
+  else if (score >= 1) badge = badges[2];
+
+  if (badge) {
+    document.getElementById("badge-image").src = badge.url;
+    document.getElementById("badge-image").style.display = "inline";
+ 
+  }
+
+  saveFinalResult(score, badge);
+
+  // عرض الخيارات بعد التصحيح
+  showNextOptions();
+}
+
+function showNextOptions() {
+  // إنشاء صندوق الخيارات
+  const optionsContainer = document.createElement('div');
+  optionsContainer.style.textAlign = "center";
+  optionsContainer.style.marginTop = "20px";
+
+  const leaderboardBtn = document.createElement('button');
+  leaderboardBtn.innerHTML = '🏆 قائمة المتصدرين';
+  leaderboardBtn.style.cssText = `
+    padding: 10px 20px; 
+    margin: 10px; 
+    background: #4a00e0; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    cursor: pointer;
+  `;
+  leaderboardBtn.onclick = () => {
+    window.location.href = "ranking2_3.html";
+  };
+
+  const evaluationBtn = document.createElement('button');
+  evaluationBtn.innerHTML = 'المتابعة إلى التقويم الذاتي';
+  evaluationBtn.style.cssText = `
+    padding: 10px 20px; 
+    margin: 10px; 
+    background: #00796b; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    cursor: pointer;
+  `;
+  evaluationBtn.onclick = () => {
+    window.location.href = "/khlod/unit2/Self-evaluation2_3.html";
+  };
+
+  optionsContainer.appendChild(leaderboardBtn);
+  optionsContainer.appendChild(evaluationBtn);
+
+  // وضعهم في الصفحة بعد النتيجة أو الشارة
+  const badgeImage = document.getElementById("badge-image");
+  badgeImage.parentElement.appendChild(optionsContainer);
+}
+
+
+// ✅ حفظ الشارة
+async function saveFinalResult(score, badge) {
+  const data = {
+    name: currentUser.name,
+    email: currentUser.email,
+    lesson: currentUser.lesson,
+    score: score
+  };
+
+  // أضف الحقل المناسب حسب الشارة
+  if (badge) {
+    data[badge.field] = badge.url;
+  }
+
+  await supabaseClient.from('activities_results').insert([data]);
+}
+///ممممممممممممممممممممممممممممممممممممممممم
+
+function showFeedback(type) {
+  const feedback = document.getElementById("feedback");
+  const image = document.getElementById("feedback-image");
+  image.src = type === "correct"
+    ? "https://cdn-icons-png.flaticon.com/512/845/845646.png" // ✅ صورة صح
+    : "https://cdn-icons-png.flaticon.com/512/463/463612.png"; // ❌ صورة خطأ
+  feedback.style.display = "block";
+  setTimeout(() => feedback.style.display = "none", 1000);
+}
+
+//------------------------------------------------------------
+ let timeLeft = 20;
+  const timerEl = document.getElementById("timer");
+  const circleEl = document.getElementById("timer-circle");
+
+  const timerInterval = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+
+    // تغيير لون الدائرة تدريجيًا
+    if (timeLeft > 13) {
+      circleEl.style.backgroundColor = "green";
+    } else if (timeLeft > 6) {
+      circleEl.style.backgroundColor = "orange";
+    } else {
+      circleEl.style.backgroundColor = "red";
+    }
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      timerEl.textContent = "0";
+      circleEl.style.backgroundColor = "red";
+    }
+  }, 1000);
+</script>
+
+<!-- ✅ مكتبة Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>
+
