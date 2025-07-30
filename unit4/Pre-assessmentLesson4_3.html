@@ -162,11 +162,11 @@ function calculateScore() {
   if (percentage < 50) {
     showModal("عليك دراسة محتوى الدرس، لقد حصلت على " + percentage.toFixed(0) + "%", () => {
       localStorage.setItem("startLesson2", "true");
-      window.location.href = "/khlod/module4.html#lesson3"; // أو أي كلاس / صفحة   module1.html#lesson1_T1
+      window.location.href = "https://github.com/Educationalenvironment/Educational-environment_thkem_/module4.html#lesson3"; // أو أي كلاس / صفحة   module1.html#lesson1_T1
     });
   } else {
     showModal("ممتاز!  لقد أنهيت التدريب في البيئة سيتم الأن توجيهك الي شاشة الأختبار البعدي  ، حصلت على " + percentage.toFixed(0) + "%", () => {
-    window.location.href = "/khlod/dashboard1.html#calend";// أو أي كلاس / صفحة
+    window.location.href = "https://github.com/Educationalenvironment/Educational-environment_thkem_/dashboard1.html#calend";// أو أي كلاس / صفحة
     });
   }
 }
