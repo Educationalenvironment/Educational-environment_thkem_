@@ -756,42 +756,1258 @@
     </div>
   `;
 }
- else if (tabName === 'guide') {
-      document.getElementById('content-area').innerHTML = `
-        <div class="lessons-module-container">
-      <h3 class="module-title"><img src="Photo/midel1/Lessons1.png" class="title-icon"> عزيزي المتدرب: يسعدني أن أقدم هذا الدليل الذي سيرشدكم أثناء السير داخل البيئة التدريبية من خلال ثلاث محاور رئيسية</h3>
+else if (tabName === 'guide') {
+  document.getElementById('content-area').innerHTML = `
+    <div class="lessons-module-container">
+      <h3 class="module-title">
+        <img src="Photo/midel1/Lessons1.png" class="title-icon">
+        عزيزي المتدرب: يسعدني أن أقدم هذا الدليل الذي سيرشدكم أثناء السير داخل البيئة التدريبية من خلال ثلاث محاور رئيسية
+      </h3>
       <div class="lessons-wrapper">
-        <div class="lesson-item lesson-purple" onclick="">
+        <div class="lesson-item lesson-purple nav-btn" data-tab="mma">
           <div class="lesson-top-icon"><img src="Photo/midel1/Lessons1.png"></div>
           <div class="lesson-text">
             <h4> 1</h4>
-            <p> المتطلبات الاساسية لأستخدام البيئة  </p>
+            <p> المتطلبات الاساسية لأستخدام البيئة </p>
           </div>
           <div class="lesson-line"></div>
           <div class="lesson-number">1</div>
         </div>
-        <div class="lesson-item lesson-blue" onclick="">
+
+        <div class="lesson-item lesson-blue nav-btn" data-tab="mmb">
           <div class="lesson-top-icon"><img src="Photo/midel1/Lessons1.png"></div>
           <div class="lesson-text">
             <h4> 2</h4>
-            <p> كيفية تسجيل الدخول<br> ف البيئه   </p>
+            <p> كيفية تسجيل الدخول<br> ف البيئه </p>
           </div>
           <div class="lesson-line"></div>
           <div class="lesson-number">2</div>
         </div>
-        <div class="lesson-item lesson-cyan" onclick="">
+
+        <div class="lesson-item lesson-cyan nav-btn" data-tab="mmc">
           <div class="lesson-top-icon"><img src="Photo/midel1/Lessons1.png"></div>
           <div class="lesson-text">
             <h4> 3</h4>
-            <p> الأبحار والتفاعل <br>داخل البيئه  </p>
+            <p> الأبحار والتفاعل <br>داخل البيئه </p>
           </div>
           <div class="lesson-line"></div>
           <div class="lesson-number">3</div>
         </div>
       </div>
     </div>
-      `;
+  `;
+
+  // 🟢 تعريف دالة محلية خاصة بالتنقل فقط داخل هذا القسم
+ function goToSection(tabName) {
+  if (tabName === 'mma') {
+    document.getElementById('content-area').innerHTML = `
+      <section class="lesson-detail" style="
+  max-width: 800px;         /* عرض أكبر */
+  width: 90%;               /* عرض نسبي ليكون متجاوب */
+  padding: 30px 35px;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  text-align: right;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  position: relative;       /* بدل absolute عشان نتحكم بالمسافة العليا */
+  margin: 20px auto 0 auto; /* مسافة علوية 100px، وتمركز أفقي */
+  line-height: 1.7;
+  direction: rtl;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <h2 style="font-size: 30px; margin-bottom: 20px; font-weight: 700;">
+  </h2>
+  <p style="font-size: 18px; margin-bottom: 30px;">
+    عزيزي المتدرب........<br><br>
+    يتطلب استخدام البيئة التدريبية أن يتوفر لديك ما يأتي:<br>
+    ١. جهاز كمبيوتر أو لاب توب.<br>
+    ٢. إعدادات العرض (الشاشة) ٧٦٨ * ١٣٦٦<br>
+    ٣. برنامج تصفح الإنترنت مثل (Google Chrome - Firefox)<br>
+    ٤. يفضل استخدام سرعة إنترنت فائقة.
+  </p>
+  <button id="back-btn" style="
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  "
+  onmouseover="this.style.backgroundColor='#2980b9'"
+  onmouseout="this.style.backgroundColor='#3498db'">
+    ◀ العودة إلى الدليل
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
+  </style>
+</section>
+
+    `;
+    document.getElementById("back-btn").addEventListener("click", () => {
+      loadTabContent('guide');
+    });
+
+  } else if (tabName === 'mmb') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+      max-width: 900px;
+      width: 90%;
+      padding: 25px 30px;
+      margin: 0px auto 0 auto;
+      background: #f5f7fa;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      direction: rtl;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      animation: fadeIn 0.7s ease forwards;
+    ">
+      <div class="text-content" style="flex: 1; text-align: right; font-size: 18px; line-height: 1.7;">
+        <p>
+          عزيزي المتدرب........<br><br>
+          لتسجيل الدخول للبيئة التدريبية أتبع الخطوات الأتية:<br>
+          ١. فتح متصفح الإنترنت مثل متصفح Google Chrome.<br>
+          2. نسخ لينك البيئة التدريبية 
+          <a href="http://107.189.1.159/~newshaker/zag/index.php" target="_blank" style="color:#3498db; text-decoration: underline;">
+            http://107.189.1.159/~newshaker/zag/index.php
+          </a> 
+          فى مستطيل البحث بالمتصفح ثم الضغط على زر Enter من لوحة المفاتيح.<br>
+          ٣. تظهر صفحة تسجيل الدخول، اكتب اسمك، والباسورد الخاص بك، ثم اضغط دخول. كما بشكل (2).
+        </p>
+        <button id="back-btn" style="
+          background-color: #3498db;
+          border: none;
+          color: white;
+          padding: 14px 28px;
+          font-size: 17px;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          margin-top: 25px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        "
+        onmouseover="this.style.backgroundColor='#2980b9'"
+        onmouseout="this.style.backgroundColor='#3498db'">
+          ◀ العودة إلى الدليل
+        </button>
+      </div>
+      <div class="image-content" style="flex: 1; text-align: center;">
+        <img src="Photo/Dlel1.jpg" alt="صورة توضيحية لتسجيل الدخول" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+      </div>
+
+      <style>
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+      </style>
+    </section>
+  `;
+  
+  document.getElementById("back-btn").addEventListener("click", () => {
+    loadTabContent('guide');
+  });
+
+
+  } else if (tabName === 'mmc') {
+  document.getElementById('content-area').innerHTML = `
+   <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* ✅ لتجعل العناصر رأسية */
+  justify-content: center; /* ✅ توسيط عمودي */
+  align-items: center; /* ✅ توسيط أفقي */
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="display: flex; width: 100%; flex: 1; gap: 30px; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right; font-size: 18px; line-height: 1.7;">
+      <p>
+        عزيزي المتدرب........<br><br>
+        للإبحار والتفاعل الجيد داخل بيئة التدريب كما في الشكل أتبع الخطوات الآتية:
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel2.jpg" alt="صورة توضيحية للتفاعل" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc2');
+  });
+}
+
+else if (tabName === 'mmc2') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 1000px;
+  width: 100%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* ✅ لتوزيع العناصر رأسياً */
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="display: flex; width: 100%; gap: 30px; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right; font-size: 18px; line-height: 1.7;">
+      <p>
+        ▪ اضغط على زر أهداف البيئة لمعرفة الموضوعات التى تقدمها البيئة التدريبية.
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel3.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc3');
+  });
+}
+
+
+else if (tabName === 'mmc3') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 1000px;
+  width: 100%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* ✅ لتحويل الهيكل إلى عمودي */
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="display: flex; width: 100%; gap: 30px; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right; font-size: 18px; line-height: 1.7;">
+      <p>
+        اضغط على زر دليل المتدرب لمعرفة كيفية التسجيل في البيئة والمتطلبات الأساسية اللازمة.
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel4.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc4');
+  });
+}
+
+else if (tabName === 'mmc4') {
+  document.getElementById('content-area').innerHTML = `
+   <section class="lesson-detail" style="
+  max-width: 1000px;
+  width: 100%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* ✅ جعل السيكشن عموديًا */
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="display: flex; width: 100%; gap: 30px; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right; font-size: 18px; line-height: 1.7;">
+      <p>
+        ▪ اضغط على زر التقويم (التقويم القبلي) كما في شكل (4) وقم بأداء الاختبار القبلي، وبناءً على درجتك سيوجهك الاختبار إلى دراسة الموديولات التدريبية.
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel5.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc5');
+  });
+}
+
+else if (tabName === 'mmc5') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 1000px;
+  width: 100%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="display: flex; width: 100%; gap: 30px; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right; font-size: 18px; line-height: 1.7;">
+      <p>
+        ▪ اضغط زر المحتوى التعليمي لدراسة الموديول الأول المقسم لعدة دروس.
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel7.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc6');
+  });
+}
+
+else if (tabName === 'mmc6') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 1000px;
+  width: 100%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="display: flex; width: 100%; gap: 30px; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right; font-size: 18px; line-height: 1.7;">
+      <p>
+        ▪ للتواصل مع الباحثة اضغط على زر "اتصل بنا" والذي يشمل Gmail، والواتس من خلال رقم التليفون.
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel8.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc7');
+  });
+}
+else if (tabName === 'mmc7') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+      max-width: 900px;
+      width: 90%;
+      min-height: 400px;
+      padding: 20px 40px;
+      margin: 20px auto 0 auto;
+      background: #f5f7fa;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      direction: rtl;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      font-size: 16px;
+      line-height: 1.4;
+      animation: fadeIn 0.7s ease forwards;
+    ">
+      <div style="
+        flex: 1;
+        padding-right: 10px;
+        margin-bottom: 15px;
+      ">
+        <p style="margin-bottom: 8px;">
+          الهدف العام من البيئة التدريبية:<br>
+          تنمية بعض مهارات دمج التكنولوجيا في التعليم لدى أعضاء الهيئة المعاونة بكلية التربية النوعية.
+        </p>
+        <p style="margin-bottom: 8px;">
+          كما يجب عزيزي المتدرب أن يتوافر لديك مهارات تساعدك على تصفح البيئة واستخدامها وهي:
+        </p>
+        <ul style="margin-bottom: 8px; padding-right: 20px;">
+          <li>استخدام جهاز الحاسب الآلي.</li>
+          <li>البحث باستخدام الإنترنت على مواقع متعددة.</li>
+          <li>استخدام برامج الكتابة والتصميم.</li>
+        </ul>
+        <p style="margin-bottom: 8px;">
+          عليك عزيزي المتدرب أداء التقويم القبلي: قبل دراسة محتوى البيئة التدريبية لمعرفة مدى خبراتك واحتياجك للمحتوى المتاح، من خلال قراءة تعليمات كل اختبار أو مقياس ومكوناته، مع ترك مدة أربع أيام لأداء التقويم القبلي بما يتناسب مع وقتك؛ تجنباً لقلقك واستعدادك لأدائهم بهدوء.
+        </p>
+        <p>
+          بعد الانتهاء من أداء الاختبار، إذا كانت نسبة نجاحك أقل من 50% يسمح لك بدخول البيئة ودراسة المحتوى، وإذا كانت نسبة نجاحك أعلى من 50% فأنت لست بحاجة إلى دراسة البيئة ولا يسمح لك بدخول البيئة ودراسة المحتوى.
+        </p>
+      </div>
+
+      <button id="next-btn" style="
+        background-color: #27ae60;
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 17px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 0 auto 10px auto;
+        display: block;
+      "
+      onmouseover="this.style.backgroundColor='#219150'"
+      onmouseout="this.style.backgroundColor='#27ae60'">
+        تابع ▶
+      </button>
+
+      <style>
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+      </style>
+    </section>
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc8');
+  });
+}
+
+else if (tabName === 'mmc8') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 18px;
+  line-height: 1.6;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="display: flex; width: 100%; gap: 30px; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right;">
+      <p>
+        أ. الابحار في دراسة محتوى البيئة:<br>
+        ▪ عزيزي المتدرب عليك أولاً قراءة أهداف البيئة التي ينبغي تحقيقها بعد دراسة المحتوى التعليمي كما بشكل (5) الآتي:
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel3.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc9');
+  });
+}
+else if (tabName === 'mmc9') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 20px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;  /* عمودي عشان الزر تحت */
+  gap: 30px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 9px;
+  line-height: 1.3;
+  animation: fadeIn 0.7s ease forwards;
+  overflow: hidden;
+">
+
+  <div style="display: flex; gap: 30px; flex: 1; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right; overflow: hidden;">
+      <p>
+        ▪ ثم اضغط زر المحتوى التعليمي: حيث يتكون من أربعة موديولات، يتم دراسة درس واحد كل يوم من الموديولات التدريبية.<br><br>
+        &#10003; الموديول الأول: خلفية نظرية عن دمج التكنولوجيا في التعليم، يشمل 3 دروس مرتبة كالآتي:<br>
+        1. مفهوم دمج التكنولوجيا في التعليم.<br>
+        2. مهارات دمج التكنولوجيا في التعليم.<br>
+        3. تنمية مهارات التصميم التعليمي.<br><br>
+        &#10003; الموديول الثاني: مهارات الاتصال الإلكتروني باستخدام منصة Teams ، يشمل 3 دروس مرتبة كالآتي:<br>
+        1. تسجيل الدخول في منصة Teams.<br>
+        2. ضبط اعدادات اجتماع الفصل الافتراضي عبر منصة Teams.<br>
+        3. إدارة الفصل الافتراضي عبر منصة Teams.<br><br>
+        &#10003; الموديول الثالث: مهارات التقويم الإلكتروني باستخدام Google Form ، ويشمل 3 دروس مرتبة كالآتي:<br>
+        1. تسجيل الدخول الى Google Form.<br>
+        2. إضافة اسئلة للنموذج في Google Form.<br>
+        3. ضبط إعدادات النموذج في Google Form.<br><br>
+        &#10003; الموديول الرابع: مهارات الثقافة الرقمية باستخدام برنامج Mendeley ، ويشمل 3 دروس مرتبة كالآتي:<br>
+        1. تسجيل الدخول إلى Mendeley.<br>
+        2. إضافة مجلد من جهاز الكمبيوتر كمرجع في Mendeley.<br>
+        3. تنمية البحث في الوثائق في Mendeley.<br><br>
+        ▪ كما يمكنك عزيزي المتدرب تصفح الدروس داخل الموديول: من خلال قراءة المقدمة الخاصة بالموديول كاملاً. كما بشكل (7) الآتي:
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel10.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;  /* هذا يجعل الزر في المنتصف */
+    display: block;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc10');
+  });
+}
+else if (tabName === 'mmc10') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* جعل الاتجاه عمودي ليكون الزر في صف مستقل */
+  gap: 30px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.7s ease forwards;
+">
+
+  <div style="display: flex; gap: 30px; flex: 1; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right;">
+      <p>
+        ▪ ثم قراءة الأهداف المراد تحقيقها من الموديول ككل، كما بشكل (8) الآتي:
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel11.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* لجعل الزر في منتصف العرض */
+    display: block;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc11');
+  });
+}
+else if (tabName === 'mmc11') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* هنا جعلت التوزيع عمودياً */
+  gap: 30px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.7s ease forwards;
+">
+
+  <div style="display: flex; gap: 30px; flex: 1; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right;">
+      <p>
+        ▪ ثم لمعرفة دروس الموديول وعناوينها يتم الوقوف على الدروس فتظهر قائمة منسدلة للدروس كما بشكل (9).
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel12.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* تمركز الزر أفقياً */
+    display: block;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc12');
+  });
+}
+else if (tabName === 'mmc12') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* جعل المحتوى عمودياً */
+  gap: 30px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.7s ease forwards;
+">
+
+  <div style="display: flex; gap: 30px; flex: 1; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right;">
+      <p>
+        ▪ عند اختيار الدرس الأول تظهر قوائم خاصة بالدرس كما في شكل (10).
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel13.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* تمركز الزر أفقياً */
+    display: block;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc13');
+  });
+}
+else if (tabName === 'mmc13') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* جعل العناصر عمودية */
+  gap: 30px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.7s ease forwards;
+">
+
+  <div style="display: flex; gap: 30px; flex: 1; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right;">
+      <p>
+        ب. الابحار في النشاط التعليمي:<br>
+        يتم تقديم النشاط بنمطي التحدي:<br>
+        ▪ ضغط الوقت.<br>
+        ▪ الأسئلة الخاصة.
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel14.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* تمركز الزر أفقياً */
+    display: block;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc14');
+  });
+}
+else if (tabName === 'mmc14') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* لجعل المحتوى عمودي */
+  gap: 30px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.7s ease forwards;
+">
+
+  <div style="display: flex; gap: 30px; flex: 1; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right;">
+      <p>
+        مثال: للنشاط بالبيئة التدريبية كما بالشكل(14) الآتي:
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel15.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* تمركز الزر أفقياً */
+    display: block;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc15');
+  });
+}
+
+else if (tabName === 'mmc15') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 20px 25px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column; /* ليصبح عمودي */
+  gap: 25px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 11px;
+  line-height: 1.4;
+  animation: fadeIn 0.7s ease forwards;
+">
+
+  <div style="display: flex; gap: 25px; flex: 1; align-items: center;">
+    <div class="text-content" style="flex: 1; text-align: right;">
+      <p>
+        ج. الابحار فى التقويم و الاختبار:<br><br>
+        ▪ عزيزي المتدرب بعد الانتهاء من دراسة جميع عناصر الدرس وبعد أن يتم تسليم النشاط يتاح لك أداء التقويم الذاتي، حيث تنوع اسئلته ما بين الصواب أو الخطأ، الاختيار من متعدد كما في شكل (15).<br><br>
+        ▪ إذا حصلت على أعلى من أو يساوي 50% واجتزت التقويم يتاح لك الانتقال إلى الدرس التالي كما في الشكل (16).<br><br>
+        ▪ بينما إذا حصلت على أقل من 50% هيتم إرجاعك للدرس السابق ودراسته مرة أخرى لاجتيازه.<br><br>
+        ▪ بعد الانتهاء من الدروس الخاصة بالموديول سوف تظهر صفحة التقويم لأداء الاختبار البعدي، فإذا حصلت على نسبة أقل من 50% يتم دراسة الموديولات مرة أخرى، وإذا حصلت على 50% أو أكثر تكون اجتزت المحتوى المقدم بنجاح.
+      </p>
+    </div>
+
+    <div class="image-content" style="flex: 1; text-align: center;">
+      <img src="Photo/Dlel16.jpg" alt="صورة توضيحية" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </div>
+  </div>
+
+  <button id="next-btn" style="
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto; /* تمركز الزر أفقياً */
+    display: block;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#219150'"
+  onmouseout="this.style.backgroundColor='#27ae60'">
+    تابع ▶
+  </button>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</section>
+
+  `;
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    goToSection('mmc16');
+  });
+}
+
+else if (tabName === 'mmc16') {
+  document.getElementById('content-area').innerHTML = `
+    <section class="lesson-detail" style="
+  max-width: 900px;
+  width: 90%;
+  height: 400px;
+  padding: 25px 30px;
+  margin: 20px auto 0 auto;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  font-size: 11px;
+  line-height: 1.6;
+  animation: fadeIn 0.7s ease forwards;
+">
+  <div style="text-align: right;">
+    <p><strong>المصادر والمراجع التعليمية المطلوبة لدراسة محتوى البيئة التدريبية:</strong></p>
+    <p>▪ <strong>الكتاب الجامعي:</strong></p>
+    <p style="margin-right: 15px;">
+      ✓ محمود محمد حسين (۲۰۱۸) أثر التفاعل بين أسلوب محفزات الألعاب (النقاط / ولوحة الشرف) ونمط الشخصية (انبساطي / انطوائي) على تنمية بعض مهارات معالجة الرسومات التعليمية الرقمية والانخراط في التعلم لدى طلاب كلية التربية النوعية، تكنولوجيا التربية، دراسات وبحوث، ۳۷۴، ص ٥٩<br><br>
+      ✓ الغزو، إيمان محمد (2015). دمج التقنيات في التعليم إعداد المعلم تقنياً للألفية الثالثة ط(1). نبي دار القلم
+    </p>
+    <p>▪ <strong>كتب ومقالات متوفرة بمكتبة الكلية وعلى شبكة الإنترنت:</strong></p>
+    <p style="margin-right: 15px;">
+      ✓ رحاب السيد، غادة عبدالعاطي (2020). كتاب دمج التكنولوجيا في التعليم - كلية التربية النوعية بجامعة الزقازيق
+    </p>
+
+    <button id="back-btn" style="
+      background-color: #3498db;
+      border: none;
+      color: white;
+      padding: 12px 26px;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 30px auto 0 auto;  /* تمركز أفقياً مع مسافة فوق */
+      display: block;
+      transition: background-color 0.3s ease;
+    "
+    onmouseover="this.style.backgroundColor='#2c80b4'"
+    onmouseout="this.style.backgroundColor='#3498db'">
+      ◀ العودة إلى الدليل
+    </button>
+  </div>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</section>
+
+  `;
+
+    document.getElementById("back-btn").addEventListener("click", () => {
+      loadTabContent('guide');
+  });
+}
+
+  }
+
+  // 🟢 تعريف زر العودة أيضًا
+  window.goBackToGuide = function () {
+    // ببساطة نعيد عرض المحتوى مجددًا
+    // (أو تنادي navigateTo('guide') أو loadTab('guide') حسب الحالة)
+    loadTab('guide');
+  };
+
+  // 🟢 تفعيل الأحداث على الأزرار الثلاثة
+  const buttons = document.querySelectorAll('.nav-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-tab');
+      goToSection(target);
+    });
+  });
+}
+
    //الأختبار القبلي 
    
 else if (tabName === 'calendar') {
